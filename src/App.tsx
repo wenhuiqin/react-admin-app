@@ -1,26 +1,25 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+// 快捷键：Rect ts rtfc
+import type { FC } from 'react';
+// 创建登录的路由
+import { Routes, Route, Navigate } from 'react-router-dom'
+import { useAppSelector } from './store/hook';
+import Index from '@/layout/index'
+import Login from '@/views/login/index'               
+import './App.css'
+import store2 from 'store2';
 
-function App() {
+interface Props {}
+
+const App: FC<Props> = () => {
+  const adminname = useAppSelector(state=>state.admin.adminname)
+  const redirect = store2.session.get('redirect')
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Routes>
+      <Route path='/login' element={adminname?<Navigate to={redirect?redirect:'/'} />:<Login />} />
+      <Route path='/*' element={adminname?<Index />:<Navigate to='/login' />} />
+    </Routes>
   );
 }
 
 export default App;
+

@@ -1,0 +1,51 @@
+#root, #admin-app {
+  height: 100%;
+}
+
+.demo-logo-vertical {
+  height: 32px;
+  background: rgba(255, 255, 255, 0.3);
+  margin: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.demo-logo-vertical > img {
+  width: 32px;
+  height: 32px;
+}
+
+.demo-logo-vertical > span {
+  font-size: 20px;
+  color: white;
+  font-weight: bold;
+  white-space: nowrap;
+}
+
+.login-form-box{
+  width: 500px;
+  height: 300px;
+  display: flex;
+  background-color: green;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+}
+
+.login-form-title {
+  color: #fff;
+}
+
+.login-form {
+  width: 300px;
+  height: 120px;
+}
